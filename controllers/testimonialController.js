@@ -1,0 +1,36 @@
+const guardarTestimonial=(req,res)=>{
+    
+    const {nombre,correo,mensaje}=req.body;
+    const errores=[];
+
+    if(nombre.trim()===''){
+        errores.push({mensaje:'El nombre está vacío'});
+        //return;
+    }
+    if(correo.trim()===''){
+        errores.push({mensaje:'El correo está vacío'});
+        //return;
+    }
+    if(mensaje.trim()===''){
+        errores.push({mensaje:'El mensaje está vacío'});
+        //return;
+    }
+    if(errores.length>0){
+        //mostrar la vista con errores
+        res.render('testimoniales',{
+            pagina:'Testimoniales',
+            errores,
+            nombre,
+            correo,
+            mensaje
+        })
+    }else{
+        //almacenarlo en la bd
+        
+    }
+
+}
+
+export {
+    guardarTestimonial
+}
