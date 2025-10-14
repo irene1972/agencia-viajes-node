@@ -4,12 +4,14 @@
   "description": "Primer proyecto con node js",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon index.js"
+    "dev": "nodemon index.js"
   },
+  "type": "module",
   "author": "Irene Olmos",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "pug": "^3.0.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
