@@ -17,7 +17,7 @@ app.get('/',(req,res)=>{
 app.set('view engine','pug')
 
 //definir la carpeta public
-
+app.use(express.static('public'));
 
 //le decimos que use las rutas que están en la url routes/index.js
 app.use('/',router);
