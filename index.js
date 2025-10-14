@@ -16,6 +16,14 @@ app.get('/',(req,res)=>{
 //habilitar pug (templates) en nuestro proyecto
 app.set('view engine','pug')
 
+//obener el año actual y pasarlo por varibles internas de express
+app.use((req,res,next)=>{
+    const year=new Date();
+    res.locals.nombreSitio='Agencia de Viajes';
+    res.locals.actualYear=year.getFullYear();
+    next();
+});
+
 //definir la carpeta public
 app.use(express.static('public'));
 
