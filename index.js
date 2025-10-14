@@ -16,6 +16,9 @@ app.get('/',(req,res)=>{
 //habilitar pug (templates) en nuestro proyecto
 app.set('view engine','pug')
 
+//definir la carpeta public
+
+
 //le decimos que use las rutas que están en la url routes/index.js
 app.use('/',router);
 
