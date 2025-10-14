@@ -18,13 +18,17 @@ const guardarTestimonial=async(req,res)=>{
         //return;
     }
     if(errores.length>0){
+        //consultar testimoniales existentes
+        const testimoniales=await Testimonial.findAll();
+
         //mostrar la vista con errores
         res.render('testimoniales',{
             pagina:'Testimoniales',
             errores,
             nombre,
             correo,
-            mensaje
+            mensaje,
+            testimoniales
         })
     }else{
         //almacenarlo en la bd
