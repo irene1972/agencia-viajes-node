@@ -1,0 +1,17 @@
+{
+  "name": "agenciaviajesnode",
+  "version": "1.0.0",
+  "description": "Primer proyecto con node js",
+  "main": "index.js",
+  "scripts": {
+    "dev":"nodemon index.js"
+  },
+  "author": "Irene Olmos",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
