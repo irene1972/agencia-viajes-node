@@ -1,12 +1,21 @@
 import {Viaje} from '../models/Viaje.js';
 import {Testimonial} from '../models/Testimoniales.js';
 
-const paginaInicio=(req,res)=>{
+const paginaInicio=async (req,res)=>{
 
-    res.render('inicio',{
-        pagina:'Inicio',
-        clase:'home'
-    });
+    try {
+        //consultar 3 viajes del modelo Viaje
+        const viajes=await Viaje.findAll({limit:3});
+
+        res.render('inicio',{
+            pagina:'Inicio',
+            clase:'home',
+            viajes
+        });
+    } catch (error) {
+        console.log(error);
+    }
+
 }
 
 const paginaNosotros=(req,res)=>{
@@ -18,14 +27,20 @@ const paginaNosotros=(req,res)=>{
 }
 
 const paginaViajes=async (req,res)=>{
-    //consultar BD
-    const viajes=await Viaje.findAll();
-    //console.log(viajes);
 
-    res.render('viajes',{
-        pagina:'Próximos Viajes',
-        viajes
-    });
+    try {
+        //consultar BD
+        const viajes=await Viaje.findAll();
+        //console.log(viajes);
+        res.render('viajes',{
+            pagina:'Próximos Viajes',
+            viajes
+        });
+    } catch (error) {
+        console.log(error);
+    }
+
+
 
 }
 //muestra un viaje por su slug
